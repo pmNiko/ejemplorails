@@ -1,0 +1,3 @@
+Se debe ejecutar:
+  -> bundle install
+  -> bin/rake db:migrate (para correr la migration)
