@@ -6,5 +6,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles, foreign_key: "author_id"
-  
+
+  def titles_in_category(category_name)
+    matching_articles = articles.select do |article|
+      article.categories.any? do |category|
+        category.name == category_name
+      end
+    end
+    matching_articles.map(&:title)
+  end
+
 end

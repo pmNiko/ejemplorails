@@ -3,6 +3,7 @@ group :development do
   gem 'rails_layout'
   gem 'better_errors' #Gem for better error page
   gem 'binding_of_caller' #Gem with better erros show de variables
+  gem 'rspec-rails', '~> 3.0'
 end
 gem 'bootstrap-sass'
 gem 'rolify', '~> 5.1'
