@@ -5,4 +5,12 @@ class Article < ActiveRecord::Base
 
   belongs_to :author, class_name: 'User'
   has_and_belongs_to_many :categories
+
+  def  self.search(search)
+    if search.present?
+      where('title LIKE :search OR text LIKE :search', search: "%#{search}%")
+    else
+      all
+    end
+  end
 end

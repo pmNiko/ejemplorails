@@ -5,6 +5,8 @@ group :development do
   gem 'binding_of_caller' #Gem with better erros show de variables
   gem 'rspec-rails', '~> 3.0'
 end
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-sass'
 gem 'rolify', '~> 5.1'
 gem 'pundit', '~> 1.1.0'
