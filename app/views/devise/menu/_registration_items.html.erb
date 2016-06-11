@@ -1,6 +1,12 @@
 <% if user_signed_in? %>
-  <li>
-    <%= link_to('Edit registration', edit_user_registration_path) %>
+  <li> <p class="navbar-text"> Logged in as
+    <% if current_user.profile.first_name.present? %>
+      <%= current_user.profile.first_name %>
+    <% else %>
+      <%= current_user.email %>
+    <% end %>
+  </p> <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
   </li>
 <% else %>
   <li>
