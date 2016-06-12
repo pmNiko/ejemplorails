@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  get '/profile/edit', to: 'profiles#edit',
+    as: 'edit_profile'
+  patch '/profile', to: 'profiles#update'
+
 =begin
   get '/articles',
     to: 'articles#index',
