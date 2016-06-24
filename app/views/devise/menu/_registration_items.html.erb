@@ -1,11 +1,17 @@
 <% if user_signed_in? %>
-  <li> <p class="navbar-text"> Logged in as
-    <% if current_user.profile.first_name.present? %>
-      <%= current_user.profile.first_name %>
-    <% else %>
-      <%= current_user.email %>
-    <% end %>
-  </p> <li>
+  <li>
+    <p class="navbar-text"> Logged in as
+      <% if current_user.profile.first_name.present? %>
+        <%= current_user.profile.first_name %>
+      <% else %>
+        <%= current_user.email %>
+      <% end %>
+    </p>
+  </li>
+  <li>
+    <%= link_to("My Profile", edit_profile_path) %>
+  </li>
+  <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
   </li>
 <% else %>

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users,
+    :controllers => { registrations: 'registrations' }
   root 'articles#index'
 
   resources :articles
+
+  get '/profile/edit', to: 'profiles#edit',
+    as: 'edit_profile'
+  patch '/profile', to: 'profiles#update'
 
 =begin
   get '/articles',

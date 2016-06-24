@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     @articles = Article
     .search(params[:search])
     .paginate(:page => params[:page], :per_page => 5)
-    .order(created_at: :desc)
+    .order(params[ :sort])
   end
 
   def show
